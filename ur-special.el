@@ -31,7 +31,8 @@
 (defun ur-special--check-and-enter-special-block ()
 	"If point is in a special block, open a special buffer"
 	(when (and (eq major-mode 'org-mode) (ur-special--point-is-inside-special-block))
-		(org-edit-special)))
+		(org-edit-special)
+		(delete-other-windows)))
 
 (defun ur-special--check-exit-special-buffer-up (&optional arg try-vscroll)
 	"If point is at the first line of the special buffer, exit it"
